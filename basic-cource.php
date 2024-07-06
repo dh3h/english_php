@@ -24,7 +24,7 @@ require_once('./inc/sidebar.php')
         <div style="position: fixed;z-index: 1000;width: 100vw;height: 100vh;top: 0;" class="d-flex align-items-center justify-content-center">
             <div style="position: relative; width: 100vw;height: 100vh;z-index: 1000;display: none;" id="showLessonPup"  >
                 <div class="p-2" style="position: relative;">
-                    <p class="d-flex w-100 justify-content-end py-2" style="position: absolute;left: -10px;top: 12px;">
+                    <p class="d-flex w-100 text-white justify-content-end py-2" style="position: absolute;left: -10px;top: 12px;">
                         <ion-icon name="close-outline" class="h3" id="hideLessonPup"></ion-icon>
                     </p>
                     <h2 class="text-white" id="lesson_title">Lesson 1</h2>
