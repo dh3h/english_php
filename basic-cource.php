@@ -130,13 +130,11 @@ require_once('./inc/sidebar.php')
                     <!-- sub menu -->
                     <ul class="listview image-listview">
                         <?php
-                        // Define an array of image URLs
                         $image_urls = [
                             "icard.png",
                             "sakehand.png",
                             "map.png",
                             "earth.png",
-                            // Add more images as needed
                         ];
                         $select_lesson_list = $action->database->query_sql("SELECT * FROM `tbl_lesson` WHERE phase_id = '{$phase_id_data}' AND status = 1;");
 
@@ -164,17 +162,14 @@ require_once('./inc/sidebar.php')
                         ?>
 
                     </ul>
-                    <!-- * sub menu -->
                 </li>
         <?php
             }
         }
         ?>
     </ul>
-    <!-- * Simple Multi Listview -->
 
 </div>
-<!-- * App Capsule -->
 <?php
 require_once('./inc/bottom-btn.php');
 // require_once('./inc/footer.php');

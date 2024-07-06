@@ -1,12 +1,15 @@
 <?php
 require_once('./inc/head.php');
 require_once('./inc/sidebar.php');
+// $video = [];
 if (isset($_GET['view_id']) && !empty($action->database->text_filter($_GET['view_id']))) {
     $view_id = $action->database->text_filter($_GET['view_id']);
     $select_video_view_id = $action->database->query_sql("SELECT * FROM `tbl_videos` WHERE id = '{$view_id}' and status = 1;");
-    if ($select_video_view_id) {
-        foreach ($select_video_view_id as $data_video_view) {
-        }
+    if($select_video_view_id){
+      // $config = $select_video_view_id[0]['config'];
+      // foreach ($select_video_view_id as $video_view) {
+      //     $video[] = $video_view[];
+      // }
     }
 } else {
     // Redirect to another page after 1 second
@@ -493,7 +496,7 @@ require_once('./inc/script.php');
     };
   };
 
-  answer_the_questions_list = <%- JSON.stringify(select_video_view_id,) %>;
+  answer_the_questions_list = <?= json_encode($select_video_view_id); ?>;
   const questions = answer_the_questions_list.map(convertToNewFormat);
 
   //selecting all required elements
@@ -614,9 +617,10 @@ require_once('./inc/script.php');
   function optionSelected(answer) {
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    let userAns = answer.textContent; //getting user selected option
-    let correcAns = questions[que_count].answer; //getting correct answer from array
+    let userAns = answer.textContent.toLowerCase(); //getting user selected option
+    let correcAns = questions[que_count].answer.toLowerCase(); //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
+
 
     if (userAns == correcAns) { //if user selected option is equal to array's correct answer
       userScore += 1; //upgrading score value with 1
@@ -630,7 +634,7 @@ require_once('./inc/script.php');
       console.log("Wrong Answer");
 
       for (i = 0; i < allOptions; i++) {
-        if (option_list.children[i].textContent == correcAns) { //if there is an option which is matched to an array answer 
+        if (option_list.children[i].textContent.toLowerCase() == correcAns) { //if there is an option which is matched to an array answer 
           option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
           option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
           console.log("Auto selected correct answer.");
