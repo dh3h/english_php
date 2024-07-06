@@ -36,17 +36,6 @@ require_once('./inc/sidebar.php')
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
-                                        Example
-                                        <footer>8 Coins to wins</footer>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item openLessonInPopUp">
-                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
-                                <div class="in">
-                                    <div>
                                         Fill in the blanks
                                         <footer>8 Coins to wins</footer>
                                     </div>
