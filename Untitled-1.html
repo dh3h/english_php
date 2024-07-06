@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <textarea id="text-input" placeholder="Enter text here..."></textarea>
+        <button id="speak-button">Speak</button>
+        <button id="stop-button">Stop</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            var synth = window.speechSynthesis;
+            var utterance;
+
+            $('#speak-button').click(function () {
+                var text = $('#text-input').val();
+                if (text !== '') {
+                    if (synth.speaking) {
+                        synth.cancel();
+                    }
+                    utterance = new SpeechSynthesisUtterance(text);
+                    synth.speak(utterance);
+                }
+            });
+
+            $('#stop-button').click(function () {
+                if (synth.speaking) {
+                    synth.cancel();
+                }
+            });
+
+            // Stop speech when the page is reloaded or closed
+            $(window).on('beforeunload', function () {
+                if (synth.speaking) {
+                    synth.cancel();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

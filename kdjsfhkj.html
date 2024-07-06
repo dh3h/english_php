@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drag and Drop Fill in the Blanks</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 80%;
+		margin: 50px auto;
+	}
+
+	.blank {
+		border: 1px solid #ccc;
+		padding: 5px;
+		width: 100px;
+		margin: 5px;
+	}
+
+	.word {
+		display: inline-block;
+		border: 1px solid #ccc;
+		padding: 5px;
+		margin: 5px;
+		cursor: pointer;
+	}
+</style>
+
+<body>
+
+	<div class="container">
+		<div id="fillBlanks">
+			<div class="blank" data-word="JavaScript">_____</div>
+			<div class="blank" data-word="HTML">_____</div>
+			<div class="blank" data-word="CSS">_____</div>
+		</div>
+		<div id="words">
+			<div class="word" draggable="true">JavaScript</div>
+			<div class="word" draggable="true">HTML</div>
+			<div class="word" draggable="true">CSS</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	<script>
+		const blanks = document.querySelectorAll('.blank');
+		const words = document.querySelectorAll('.word');
+
+		let draggedWord = null;
+
+		// Drag events for the words
+		words.forEach(word => {
+			word.addEventListener('dragstart', dragStart);
+		});
+
+		// Drag events for the blanks
+		blanks.forEach(blank => {
+			blank.addEventListener('dragover', dragOver);
+			blank.addEventListener('dragenter', dragEnter);
+			blank.addEventListener('dragleave', dragLeave);
+			blank.addEventListener('drop', drop);
+		});
+
+		function dragStart() {
+			draggedWord = this;
+		}
+
+		function dragOver(e) {
+			e.preventDefault();
+		}
+
+		function dragEnter(e) {
+			e.preventDefault();
+			this.style.border = '2px dashed #ccc';
+		}
+
+		function dragLeave() {
+			this.style.border = '1px solid #ccc';
+		}
+
+		function drop() {
+			this.style.border = '1px solid #ccc';
+			if (!this.textContent.trim()) {
+				this.textContent = draggedWord.textContent;
+				draggedWord.textContent = '';
+			}
+		}
+
+	</script>
+</body>
+
+</html>
