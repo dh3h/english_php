@@ -459,10 +459,11 @@ $(document).ready(function () {
         $('.convos_text').each(function () {
             if ($(this).val()) {
                 convo.push({
-                    [$(this).closest('.col-10.ps-0').prev().find('.convos_type').val()]: $(this).val()
+                    [$(this).closest('.convo_type_parent').prev().find('.convos_type').val()]: $(this).val()
                 })
             }
         });
+        console.log(convo);
         const form_data = new FormData(this);
         form_data.append('conversation', JSON.stringify(convo));
 
@@ -505,7 +506,7 @@ $(document).ready(function () {
                         <option value="b">Bot</option>
                     </select>
                 </div>
-                <div class="col-9 px-0">
+                <div class="col-9 px-0 convo_type_parent">
                     <input type="text" class="rounded-0 convos_text form-control"
                 placeholder="Enter Conversation">
                 </div>
@@ -1095,12 +1096,13 @@ $(document).ready(function () {
 
         $('.english_words').each(function () {
             if ($(this).val()) {
+                console.log($(this).parent().prev().find('.hindi_words').val());
                 convo.push({
-                    [$(this).closest('.col-10.ps-0').prev().find('.hindi_words').val()]: $(this).val()
+                    [$(this).parent().prev().find('.hindi_words').val()]: $(this).val()
                 })
             }
         });
-        console.log(convo);
+        // console.log(convo);
         form_data.append('hangman', JSON.stringify(convo));
 
         $.ajax({
@@ -1111,11 +1113,13 @@ $(document).ready(function () {
             processData: false,
             success: (response) => {
                 const json = JSON.parse(response);
-                if (json.status == 1) {
+                if (json.status == 100) {
                     swaMsg('success', json.msg, "#0F843F");
                     setTimeout(() => {
                         location.reload();
                     }, 1200);
+                } else if (json.status == 101) {
+                    swaMsg('error', json.msg, "#a90228");
                 } else {
                     swaMsg('error', json.msg, "#a90228");
                 }
@@ -1336,7 +1340,7 @@ $(document).ready(function () {
     });
     // End //
 
-
+    // alert();
 
     $(document).on('change', '#permission_staff', function (e) {
         e.preventDefault();

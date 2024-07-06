@@ -72,9 +72,9 @@ require_once("./inc/sidebar.php");
                                                                     <select class="convos_type form-control">
                                                                         <option value="u">User</option>
                                                                         <option value="b">Bot</option>
-                                                                    </select>
+                                                                    </select>   
                                                                 </div>
-                                                                <div class="col-10 ps-0">
+                                                                <div class="col-10 convo_type_parent ps-0">
                                                                     <input type="text" class="convos_text form-control" placeholder="Enter Conversation">
                                                                 </div>
 

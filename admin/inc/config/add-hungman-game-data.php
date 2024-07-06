@@ -23,7 +23,7 @@ if (!isset($json['status'])) {
                 $json['status'] = 100;
                 $json['msg'] = 'Updated Successfully';
             } else {
-                $json['status'] = 100;
+                $json['status'] = 101;
                 $json['msg'] = 'An Error Occured';
             }
         }

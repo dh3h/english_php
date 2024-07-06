@@ -43,7 +43,7 @@ if (!isset($json['status'])) {
     } else {
         if (!isset($json['status']) && empty($hidden_id)) {
             $field['lesson_id'] = $lesson_id;
-            $field['lesson_id'] = $conversation_title;
+            $field['title'] = $conversation_title;
             $field['conversation'] = $conversation;
             $field['date'] = $date;
             $insert = $action->database->insert_query("tbl_conversation", $field);

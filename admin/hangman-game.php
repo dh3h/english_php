@@ -52,10 +52,10 @@ require_once("./inc/sidebar.php");
                                                             <div class="row">
                                                                 <input type="hidden" name="hidden_id" value="1">
                                                                 <div class="col-5 pe-0">
-                                                                    <input type="text" class="hindi_words form-control" placeholder="Enter Hindi Words" value="">
+                                                                    <input type="text" class="hindi_words form-control" name="hindi[]" placeholder="Enter Hindi Words" value="">
                                                                 </div>
                                                                 <div class="col-5 ps-0">
-                                                                    <input type="text" class="english_words form-control" placeholder="Enter English Words" value="">
+                                                                    <input type="text" class="english_words form-control" name="english[]" placeholder="Enter English Words" value="">
                                                                 </div>
                                                                 <div class="col-2 ps-0">
                                                                     <a class="btn btn-danger shadow btn-block btn sharp delete_hangman"><i class="fa fa-trash"></i></a>

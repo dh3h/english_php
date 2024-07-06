@@ -22,9 +22,9 @@ require_once('./inc/sidebar.php')
 <div id="appCapsule" style="position: relative;">
     <div id="showLessonPupParent" style="display: none;">
         <div style="position: fixed;z-index: 1000;width: 100vw;height: 100vh;top: 0;" class="d-flex align-items-center justify-content-center">
-            <div style="position: relative; width: 100vw;height: 100vh;z-index: 1000;display: none;" id="showLessonPup"  >
+            <div style="position: relative; width: 100vw;height: 100vh;z-index: 1000;display: none; overflow:auto" id="showLessonPup">
                 <div class="p-2" style="position: relative;">
-                    <p class="d-flex w-100 text-white justify-content-end py-2" style="position: absolute;left: -10px;top: 12px;">
+                    <p class="d-flex w-100 justify-content-end py-2 text-light" style="position: absolute;left: -10px;top: 12px;">
                         <ion-icon name="close-outline" class="h3" id="hideLessonPup"></ion-icon>
                     </p>
                     <h2 class="text-white" id="lesson_title">Lesson 1</h2>
@@ -32,18 +32,7 @@ require_once('./inc/sidebar.php')
                     <ul class="listview image-listview mt-4 border-0" style="background: none;">
 
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item openLessonInPopUp">
-                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
-                                <div class="in">
-                                    <div>
-                                        Example
-                                        <footer>8 Coins to wins</footer>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item lesson_links openLessonInPopUp">
+                            <a href="test-fill-in-the-blank.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
@@ -55,7 +44,7 @@ require_once('./inc/sidebar.php')
                             </a>
                         </li>
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a href="rearrangement.php?lesson_id=" class="item lesson_links openLessonInPopUp">
+                            <a href="test-re-arrangement.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
@@ -66,7 +55,7 @@ require_once('./inc/sidebar.php')
                             </a>
                         </li>
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item lesson_links openLessonInPopUp">
+                            <a href="test-find-correct-sentence.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
@@ -77,7 +66,7 @@ require_once('./inc/sidebar.php')
                             </a>
                         </li>
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item lesson_links openLessonInPopUp">
+                            <a href="test-listen-and-type.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
@@ -88,7 +77,7 @@ require_once('./inc/sidebar.php')
                             </a>
                         </li>
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item lesson_links openLessonInPopUp">
+                            <a href="test-conversation.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
@@ -99,11 +88,58 @@ require_once('./inc/sidebar.php')
                             </a>
                         </li>
                         <li class="bg-white mb-1 showPopOptions" style="display: none;">
-                            <a class="item lesson_links openLessonInPopUp">
+                            <a href="test-story.php?lesson_id=" class="item openLessonInPopUp lesson_links">
                                 <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
                                 <div class="in">
                                     <div>
                                         Storys
+                                        <footer>play a practice game with another learner</footer>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
+                            <a href="test-answer-the-questions.php?lesson_id=" class="item openLessonInPopUp lesson_links">
+                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Answer the questions
+                                        <footer>play a practice game with another learner</footer>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
+                            <a href="test-finding-the-gems.php?lesson_id=" class="item openLessonInPopUp lesson_links">
+                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Finding the Gems
+                                        <footer>play a practice game with another learner</footer>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
+                            <a href="test-listen-select-options.php?lesson_id=" class="item openLessonInPopUp lesson_links">
+                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Listen & select the correct sentence
+                                        <footer>play a practice game with another learner</footer>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="bg-white mb-1 showPopOptions" style="display: none;">
+                            <a href="test-fill-code-videos.php?lesson_id=" class="item openLessonInPopUp lesson_links">
+                                <img src="./assets/img/app-assets/spell.png" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Fill the code from video tips
                                         <footer>play a practice game with another learner</footer>
                                     </div>
                                 </div>
@@ -185,7 +221,7 @@ require_once('./inc/script.php');
 ?>
 
 <script>
- $(document).on('click', '.open_lesson_modal', function (e) {
+    $(document).on('click', '.open_lesson_modal', function(e) {
         const element = $(this);
         const title = element.data('name');
         const lesson_id = element.data('lesson_id');
@@ -196,9 +232,9 @@ require_once('./inc/script.php');
         $('#lesson_title').text(title);
         $('#lesson_name').text(desc);
 
-        $('.lesson_links').each(function () {
+        $('.lesson_links').each(function() {
             let href = $(this).attr('href');
-            if(typeof href == 'undefined'){
+            if (typeof href == 'undefined') {
                 return;
             }
             href = href.split('lesson_id=');
@@ -208,7 +244,9 @@ require_once('./inc/script.php');
         });
 
         $('#showLessonPupParent').show();
-        $('#showLessonPup').css({'background-color': bg }).show(300, () => {
+        $('#showLessonPup').css({
+            'background-color': bg
+        }).show(300, () => {
             $('.showPopOptions').slideDown(300);
         });
     });

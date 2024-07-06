@@ -26,7 +26,7 @@ require_once('./inc/sidebar.php')
     <div class="section">
         <div class="row mt-3">
             <div class="col-6">
-                <a href="maintenance.php">
+                <a href="game-tea-start.php">
                     <div class="card text-white">
                         <img src="assets/img/app-assets/tea.webp" class="card-img overlay-img" alt="image">
                         <div class="card-img-overlay" style="background: rgb(0 0 0 / 6%);">
@@ -50,7 +50,7 @@ require_once('./inc/sidebar.php')
                 </a>
             </div>
             <div class="col-6">
-                <a href="/Human-hang-game">
+                <a href="game-Human-hang-game.php">
                     <div class="card bg-dark text-white">
                         <img src="./assets/img/app-assets/hgb.jpg" class="card-img overlay-img" alt="image">
                         <div class="card-img-overlay" style="background: rgb(0 0 0 / 6%);">
